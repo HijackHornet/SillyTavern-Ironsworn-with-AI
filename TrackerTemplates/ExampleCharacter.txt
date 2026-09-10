@@ -1,0 +1,57 @@
+[TIME]
+Current Time: 09:40, Day 1
+[/TIME]
+[CHARACTER]
+Eldric:
+Combat: Edge: +3 | Heart: +2 | Iron: +1 | Shadow: +2 | Wits +1
+HP ((SLOTS-#a83232)) 5/5
+Supply ((SLOTS-orange)) 5/5
+Spirit ((ORBS-cyan)) 5/5
+((INFO)) 0 XP (To spend)
+[/CHARACTER]
+
+[MOMENTUM]
+((BARREL)) Momentum: +6/10
+[/MOMENTUM]
+
+[DIALOGUE_COLORS]
+- {{user}}: ((TEXT-#79d4e8)) #79d4e8
+- Alice: ((TEXT-#d398d6)) #d398d6
+- Markus: ((TEXT-#f4a261)) #f4a261
+[/DIALOGUE_COLORS]
+[VOWS]
+Vow: ((PILL)) Bring peace (Bring peace between Elves and Humans and prevent a war)
+((SLOTS)) 0/10 (Extreme) ((PILL)) ? (No milestone yet)
+Vow: ((PILL)) Clear our names (Find the true killer of Overseer Duriun Brack and clear Eldric and Alice's names)
+((SLOTS)) 0/10 (Epic) ((PILL)) ? (No milestone yet)
+[/VOWS]
+
+[INVENTORY]
+Gear:
+- 🏹 [Common] Bow
+- 🗡️ [Common] Dagger
+- 🧥 [Common] Traveler's Cloak
+- 🧥 [Common] Traveler's Cloak
+Quest Items:
+- 🏹 [Common] Suspicious Arrow
+Resources:
+- 🪢 [Common] Rope
+[/INVENTORY]
+[COMPANIONS]
+- ((NPC))Alice (Witch) - Kindred
+  HP((SLOTS-#a83232)) 5/5
+  Abilities: ((PILLS)) Arcane Insight (When you make a move outside of combat aided by your companion’s expertise (magic), add +1.), 🔒 Has your back (When you Clash or Battle alongside your companion, or when you Face Danger against an attack by standing together, add +1.), 🔒 Lover (Once you mark a bond with your companion, add +1 when you Face Desolation in their presence.)
+[/COMPANIONS]
+[ASSETS]
+- Infiltrator (Path)
+  Abilities: ((PILLS)) Moves like a shadow (When you make a move to breach, traverse, or hide within an area held by an enemy, add +1 and take +1 momentum on a hit.), 🔒 Spy (When you Gather Information within an enemy area to discover their positions, plans, or methods, or when you Secure an Advantage within that area through observation, you may roll +shadow (instead of +wits). If you do, take +1 momentum on a hit.), 🔒 Treasures in the shadows (When you Resupply within an enemy area by scavenging or looting, you may roll +shadow (instead of +wits). If you do, take +1 momentum or +1 supply on a hit.)
+- Cutthroat (Combat Talent)
+((text))If you wield a dagger or knife…
+ Abilities: ((PILLS)) Surprise attack (When you are in position to Strike at an unsuspecting foe, choose one (before rolling): Add +2 and take +1 momentum on a hit / Inflict +2 harm on a hit.), 🔒 Menacing (When you Compel someone at the point of your blade, or when you rely on your blade to Face Danger, add +1.), 🔒 Deceptive (Once per fight, when you Secure an Advantage +shadow by performing a feint or misdirection, reroll any dice and take +1 momentum on a hit.)
+[/ASSETS]
+[BONDS]
+Bonds((SLOTS-pink)) 0.75/10
+- ((NPC)) Markus H. the Blacksmith (NPC)
+- ((NPC)) The village of the wind (Community)
+- ((NPC)) Overseer of Neira (NPC)
+[/BONDS]

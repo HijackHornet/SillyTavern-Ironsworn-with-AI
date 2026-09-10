@@ -1,0 +1,48 @@
+[TIME]
+Current Time: 08:00, Day 1
+[/TIME]
+[CHARACTER]
+{{user}}:
+Combat: Edge: +0 | Heart: +0 | Iron: +0 | Shadow: +0 | Wits +0
+HP ((SLOTS-#a83232)) 5/5
+Supply ((SLOTS-orange)) 5/5
+Spirit ((ORBS-cyan)) 5/5
+((INFO)) 0 XP (To spend)
+[/CHARACTER]
+
+[MOMENTUM]
+((BARREL)) Momentum: +2/10
+[/MOMENTUM]
+
+[VOWS]
+Vow: ((PILL)) Your inciting vow name (Here you need to put your inciting vow name and short description. This text is included in every prompt so better make it clear and short.)
+((SLOTS)) 0/10 (Extreme) ((PILL)) ? (No milestone yet)
+Vow: ((PILL)) Your long term vow name (Describe here your very long term vow)
+((SLOTS)) 0/10 (Epic) ((PILL)) ? (No milestone yet)
+[/VOWS]
+
+[INVENTORY]
+Gear:
+- 🏹 [Common] Dagger -Optional items you want to canonically have
+- 🗡️ [Common] Sword -This section isnt really base game but i like it
+Resources:
+- 🪢 [Common] Rope -Supplies cover all of this but i like knowing what i have
+[/INVENTORY]
+[COMPANIONS]
+- ((NPC))Name (Role) - Type
+  HP((SLOTS-#a83232)) 5/5
+  Abilities: ((PILLS)) Ability1 (description), 🔒 Ability2 (description), 🔒 Ability3 (description)
+[/COMPANIONS]
+[ASSETS]
+- AssetName (AssetType)
+  Abilities: ((PILLS)) Ability1 (description), 🔒 Ability2 (description), 🔒 Ability3 (description)
+- AssetName (AssetType)
+((text))If you wield a dagger or knife…
+  Abilities: ((PILLS)) Ability1 (description), 🔒 Ability2 (description), 🔒 Ability3 (description)
+[/ASSETS]
+[BONDS]
+Bonds((SLOTS-pink)) 0.75/10
+- ((NPC)) Bond name 1 (Bond type)
+- ((NPC)) Bond name 2 (Bond type)
+- ((NPC)) Bond name 3 (Bond type)
+[/BONDS]
