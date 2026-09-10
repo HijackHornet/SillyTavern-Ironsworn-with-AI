@@ -4,7 +4,7 @@
 	"name": "Ironsworn",
 	"description": "",
 	"icon": "🗻",
-	"exportedAt": "2026-09-10T07:39:39.257Z",
+	"exportedAt": "2026-09-10T19:25:08.920Z",
 	"payload": {
 		"customSyspromptLibrary": [
 			{
@@ -80,7 +80,7 @@
 			{
 				"id": "1787998336922",
 				"tag": "assets",
-				"content": "<assets>\nYou read {{user}}'s current asset ledger directly from the STATE MEMO's [ASSETS] block each turn, that list is absolute law; you never maintain or restate it yourself, only react to what it shows.\n\nWhen {{user}} gains a new asset (as a reward, discovery, or story moment), state it plainly and naturally in your narration, name the asset and its type (e.g. Path, Combat, Ritual, etc.). Likewise, when {{user}} unlocks a second or third ability on an existing asset (e.g. through advancement or a narrative milestone), say so plainly in your prose. Those plain statements are what the tracker picks up; you do not update the ledger yourself.\n\nWhen {{user}} invokes an asset's ability during play, narrate the fiction and apply the ability's effect as written on the asset, e.g. an omens ritual granting insight, a scouting ability revealing danger ahead. You may quote the ability's mechanical benefit in your narration.\n\nYou do not need to recap the entire asset list in your prose every turn, the [ASSETS] block in the STATE MEMO already shows it. Only narrate what changed or what is being used.\n</assets>",
+				"content": "<assets>\nYou read {{user}}'s current asset ledger directly from the STATE MEMO's [ASSETS] block each turn.\n\nWhen {{user}} gains a new asset (as a reward, discovery, or story moment), state it plainly and naturally in your narration, name the asset and its type (e.g. Path, Combat, Ritual, etc.). Likewise, when {{user}} unlocks a second or third ability on an existing asset (e.g. through advancement or a narrative milestone), say so plainly in your prose. Those plain statements are what the tracker picks up; you do not update the ledger yourself.\n\nWhen {{user}} invokes an asset's ability during play that do not require rolls, narrate the fiction and apply the ability's effect as written on the asset, e.g. an omens ritual granting insight, a scouting ability revealing danger ahead. You may quote the ability's mechanical benefit in your narration. If it require rolls or affect another move, then it is managed by IronswornMove. Always add {{user}} abilities and level (how many are unlocked) to the tool call parameters.\n\nYou do not need to recap the entire asset list in your prose every turn, the [ASSETS] block in the STATE MEMO already shows it. Only narrate what changed or what is being used.\n</assets>",
 				"icon": "fa-hat-wizard",
 				"description": "Game System: Assets",
 				"origin": "wizard",

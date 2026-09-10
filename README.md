@@ -140,6 +140,8 @@ Type `/ironsworn-init` and enter.
 
 **Step 6 :** Copy the code of the tracker into multihog by clicking the 3 bar icon and pasting it there.![alt text](GuideImages/firefox_u8VRvOCGmf.jpg)
 
+**Step 7:** Activate the new lorebook. To see it refresh the page then open lorebook and you should have a new entry to activate. Keep it always active 
+
 #### (Hard-Legacy) Manually in a text editor
 Not recommanded, but i'm leaving this here for reference and understand how the character tracker is built.
 
