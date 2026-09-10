@@ -15,17 +15,20 @@
     - [Settings](#settings)
       - [SillyTavern](#sillytavern)
       - [Multihog D\&D Framework](#multihog-dd-framework)
-    - [Databank](#databank)
+      - [Chat setup](#chat-setup)
+      - [Databank](#databank)
   - [Creating your character and campaign](#creating-your-character-and-campaign)
     - [Create you character](#create-you-character)
-      - [TIME](#time)
-      - [CHARACTER](#character)
-      - [MOMENTUM](#momentum)
-      - [VOWS](#vows)
-      - [INVENTORY](#inventory)
-      - [COMPANIONS and ASSETS](#companions-and-assets)
-      - [BONDS](#bonds)
-    - [Create your World](#create-your-world)
+      - [(Easy) From Sillytavern using the UI](#easy-from-sillytavern-using-the-ui)
+      - [(Hard-Legacy) Manually in a text editor](#hard-legacy-manually-in-a-text-editor)
+        - [TIME](#time)
+        - [CHARACTER](#character)
+        - [MOMENTUM](#momentum)
+        - [VOWS](#vows)
+        - [INVENTORY](#inventory)
+        - [COMPANIONS and ASSETS](#companions-and-assets)
+        - [BONDS](#bonds)
+  - [Done !](#done-)
   - [Disclaimer](#disclaimer)
   - [Credit \& thanks](#credit--thanks)
 
@@ -98,8 +101,11 @@ Disable the following :
 - Persistant Map > Map Updater > **DISABLED**
 - Persistant Map > Map Evolution > **DISABLED**
 
-
-### Databank
+#### Chat setup
+- Create a new character called "Narrator" or "Game master" and dont put ANY description in it. Multihog probably asked you to create one already.
+- Create a personna with your Character name and an empty description as well (multihog will make its own)
+- Open a new chat with the Narrator character
+#### Databank
 Open SillyTavern's **Data Bank** and import all seven PDF files from this repository's [`Databank`](Databank) folder:
 
 - `1-The Basics_Ironsworn-Rulebook.pdf`
@@ -117,11 +123,31 @@ In Silly tavern Extension menu, open **Vector Storage**, choose **Local**, and u
 
 ## Creating your character and campaign
 ### Create you character
+#### (Easy) From Sillytavern using the UI
+Now that you are in the new empty chat, its time to create your world and character ! Don't worry I made it easy for you. 
+
+Type `/ironsworn-init` and enter.
+
+**Step 1 :** Choose how you world is. You are given 3 options per topic, or you can write your own. Those responses will be loaded at all time in the context so the ai knows about your world. For reference look at the "Your world" section of the offical rules.
+
+**Step 2 :** Create your character. Think about who you want to be and choose the matching stats. For reference look at [Your Character](Databank\2-Your Character_Ironsworn-Rulebook.pdf)
+
+**Step 3 :** Pick three assets (ability or companions) to help on your journey. Only the first of its three abilities will be activated at first. You can upgrade them later by consuming XP.
+
+**Step 4 :** Choose your bonds (friends, familly, places that own you for helping them etc)
+
+**Step 5 :** Choose your vows. This is probably the most complicated one so i urge you to read page 191 of the official rulebook. But in summary you want to choose a mid term and a long term quest. The first one will take 20h or so to complete while the second one might take you the entire campaign, or you might not even complete it.
+
+**Step 6 :** Copy the code of the tracker into multihog by clicking the 3 bar icon and pasting it there.![alt text](GuideImages/firefox_u8VRvOCGmf.jpg)
+
+#### (Hard-Legacy) Manually in a text editor
+Not recommanded, but i'm leaving this here for reference and understand how the character tracker is built.
+
 Start by opening [`TrackerTemplates/CharacterTemplate.txt`](TrackerTemplates/CharacterTemplate.txt) and filling in a copy of it. The template follows the character sheet and character-creation rules from the Ironsworn rulebook. You can compare your result with [`TrackerTemplates/ExampleCharacter.txt`](TrackerTemplates/ExampleCharacter.txt).
 
 When you are finished, copy the completed template into the Multihog character or state tracker area where you want to use it. Keep the section names and formatting markers such as `[CHARACTER]`, `((SLOTS))`, and `((PILL))`, because Multihog uses them to display and maintain the tracker.
 
-#### TIME
+##### TIME
 ```text
 [TIME]
 Current Time: 08:00, Day 1
@@ -130,7 +156,7 @@ Current Time: 08:00, Day 1
 
 Set the current in-world time and day. This is the starting clock for the campaign. You can change it to fit your opening scene, but keep the `[TIME]` block in the template.
 
-#### CHARACTER
+##### CHARACTER
 Choose your character's name and assign the five starting stat bonuses. Ironsworn starts with these bonuses, arranged in any order:
 
 - Edge: quickness, agility, and ranged combat
@@ -150,10 +176,10 @@ Set the starting tracks as follows:
 
 Health, Supply, and Spirit normally range from 0 to 5. Supply represents the shared mundane equipment and provisions of the party, so you do not need to list every ration or arrow.
 
-#### MOMENTUM
+##### MOMENTUM
 Start with `+2/10` momentum. The standard maximum is `+10`, and the reset value is `+2`. The tracker will update momentum as moves and consequences occur. Do not add debilities when creating the character.
 
-#### VOWS
+##### VOWS
 Create exactly two starting vows:
 
 1. An **inciting vow**, which is the immediate problem that begins the campaign. Give it a rank, usually `Troublesome`, `Dangerous`, or `Formidable`.
@@ -161,22 +187,20 @@ Create exactly two starting vows:
 
 Write each vow as a short name followed by a clear description. The description is included in prompts, so keep it specific and easy to understand. Set both progress tracks to `0/10` at the start and leave the milestone marker as `? (No milestone yet)`. The example uses **Bring peace** as its inciting vow and **Clear our names** as its long-term vow.
 
-#### INVENTORY
+##### INVENTORY
 Items are optional. Add only important equipment, quest items, or resources that you want to establish in the fiction. Ordinary travel gear, food, ammunition, and similar necessities are already represented by Supply. Items do not grant mechanical bonuses unless an official asset says that they do.
 
-#### COMPANIONS and ASSETS
+##### COMPANIONS and ASSETS
 You need exactly **three assets total**. Use the official Ironsworn assets from the [Ironsworn Printable Asset Cards](https://tomkinpress.com/collections/free-downloads/products/ironsworn-printable-asset-cards). The four official asset types are companions, paths, combat talents, and rituals.
 
 A companion is simply an asset with an NPC name, role, type, and its own HP track. It counts as one of your three assets. Copy the companion's three abilities from the official card, mark the first ability as active with `((PILLS))`, and mark the remaining two abilities with `🔒`. Start a companion at `5/5` HP unless the asset specifies otherwise. In the example, Alice is the companion asset, while Infiltrator and Cutthroat are the other two assets.
 
 For each non-companion asset, copy its name, asset type, and all three abilities from the official card. Put the first selected ability after `((PILLS))` and prefix locked abilities with `🔒`. At character creation, choose the three assets that best fit the character and their story. Additional assets can be gained later through experience during play.
 
-#### BONDS
+##### BONDS
 Add exactly **three starting bonds** with people, communities, or other meaningful groups. Mark the bonds progress track with three ticks, shown in the template as `0.75/10`. Give each bond a name and type, such as `NPC`, `Community`, or `Place`. The example includes a blacksmith, a village, and an overseer.
-
-After completing these sections, review the character-creation summary from the rulebook: choose a name, assign the `3, 2, 2, 1, 1` stats, set Health, Spirit, and Supply to `+5`, set Momentum to `+2`, choose three assets, add three bonds, record optional important items, and create the two starting vows.
-### Create your World
-TODO
+## Done !
+You are done ! Thank you for reading this far. I hope your aventure will run smoothly and i'm open to suggestion for improvements.
 
 ## Disclaimer
 This set of tools is meant to play Ironsworn without the [Delves](https://tomkinpress.com/pages/ironsworn-delve) extension. If you want to use the extension, you must buy it, adapt the prompts to it, and **MAKE SURE YOUR AI PROVIDER COMMIT TO NOT TRAIN ON PROMPTS**. If you feed AI with paid rulebooks you are destroying the author livelyhood. So don't be that guy... I'd say stick to the base game that is free and that AI already know the rules of. Then if you love it, buy the extension or the sequel rulebook and play without AI.
