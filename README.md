@@ -12,11 +12,16 @@
     - [Extensions](#extensions)
     - [Mandatory](#mandatory-1)
     - [Optional](#optional)
+    - [Opinionated](#opinionated-1)
     - [Settings](#settings)
       - [SillyTavern](#sillytavern)
       - [Multihog D\&D Framework](#multihog-dd-framework)
       - [Chat setup](#chat-setup)
       - [Databank](#databank)
+      - [Expression+ Fork (if you installed it)](#expression-fork-if-you-installed-it)
+      - [Auto music (if installed)](#auto-music-if-installed)
+      - [TTS (if you installed Dialogue Voices)](#tts-if-you-installed-dialogue-voices)
+      - [Ikarus Auto image](#ikarus-auto-image)
   - [Creating your character and campaign](#creating-your-character-and-campaign)
     - [Create you character](#create-you-character)
       - [(Easy) From Sillytavern using the UI](#easy-from-sillytavern-using-the-ui)
@@ -51,14 +56,14 @@ Note that the installation section will guide you into setting up each of them.
 - [IronswornRoll](github.com/HijackHornet/SillyTavern-IronswornRoll)
 - Files from this repo
 ### Optionnal
-- [Expression-plus](https://github.com/Tyranomaster/expressions-plus) to have companions sprites on the right
+- [Expression-plus (fork)](https://github.com/HijackHornet/expressions-plus) to have companions sprites on the right
 - [Auto-Music](https://github.com/virgilianshailer/AutoMusic) to generate music and SFX (requires comfyui)
 - [Ikarus-auto-image](https://github.com/IkarusV/IkarusAutoImage) for its prompt post processing allowing you to define the tags of each character even with multihog
 
 ### Opinionated
 For TTS i've spent weeks trying different providers and setup and i ended up using the following options. However if you have another prefered TTS provider just skip this section as its very much what I consider best (opensource, running on CPU, no VRAM, faster output than play time, but also good voice cloning).
 - [Webui-TTS](https://ttswebui.com/) + [PocketTTS addon](https://github.com/HijackHornet/tts_webui_extension.pocket_tts)
-- [Dialogue Voice](todo) this a vibecoded addon i did that will only work with WebUI-TTS and let you define a different voice per character
+- [Dialogue Voice](https://github.com/HijackHornet/TTS-DialogueVoices) this a vibecoded addon i did that will only work with WebUI-TTS and let you define a different voice per character
 
 ## Installation
 ### Extensions
@@ -69,7 +74,7 @@ Open SillyTavern and open the **Extensions** menu. Click **Install Extension**, 
 - [IronswornRoll](https://github.com/HijackHornet/SillyTavern-IronswornRoll)
 
 ### Optional
-- [Expression-plus](https://github.com/Tyranomaster/expressions-plus)
+- [Expression-plus (fork)](https://github.com/HijackHornet/expressions-plus)
 - [Auto-Music](https://github.com/virgilianshailer/AutoMusic)
 - [Ikarus-auto-image](https://github.com/IkarusV/IkarusAutoImage)
 
@@ -78,6 +83,13 @@ Open SillyTavern and open the **Extensions** menu. Click **Install Extension**, 
 **Ikarus-auto-image** requires an image-generation API configured in SillyTavern.
 
 The Dialogue Voice extension mentioned above is not required for the suite and is not included in this installation guide because its repository link is not available yet.
+### Opinionated
+The following guide if for installing the very good PocketTTS model using WebUI TTS.
+Its quite a long install so i'm not recommending this to everyone. Expect at least 20min here.
+Install [WebTTS UI](https://ttswebui.com/installation/) and then install the [PocketTTS extension](https://github.com/HijackHornet/tts_webui_extension.pocket_tts) (by me). Launch it and test it into the [Gradio page](http://localhost:7770/).
+If you want to use custom voices, YOU NEED to open the voice cloning setup and follow the instructions. Its a legal requirement that we cant go around.
+![alt text](GuideImages/firefox_EnKVmYPa58.jpg)
+Once it works, you can either use it as is in sillytavern or also install the sillytavern extension [Dialogue Voices](https://github.com/HijackHornet/TTS-DialogueVoices) that allow splitting voices per character using regex. (See settings further down this guide)
 ### Settings
 #### SillyTavern
 **Important**: MultihogDnDFramework requires the use of ChatCompletion.
@@ -120,7 +132,40 @@ Import them into the global Data Bank so they are available to the campaign. Do 
 
 In Silly tavern Extension menu, open **Vector Storage**, choose **Local**, and use the following settings.
 ![alt text](GuideImages/firefox_NoUPyDkWw9.jpg) Don't forget **[✓]Enable for files** !
+#### Expression+ Fork (if you installed it)
+Open the settings and go to "Scenario".
+Set the following settings
+![alt text](GuideImages/firefox_KCcMS30pNe.jpg)
+The custom pattern is :
+`<font\b[^>]*\bname=["']([^"']+)["'][^>]*>` with flag `gim`
+#### Auto music (if installed)
+In the settings uncheck `Library: Auto-play next on end`
+For `Analyze every X message(s)` i chose 2 or 4. Dont put lower than 2 as the tool calls split every messages into 2 message already. Else music will generate twice per message. 
+In advance settings select for both music and SFX `Èngine : Stable audio 3` and checkpoint `stable_audio_3_medium.safetensors`. Check `Loop` and i recommend using 20sec for SFX and 90sec for Music.
 
+In comfyui you should find the workflow already in the templates. 
+![alt text](GuideImages/firefox_mcOtfBVABG.jpg)
+But really you only need to have the following models downloaded :
+- text_encoders
+  - [qwen3.5_2b_bf16.safetensors](https://huggingface.co/Comfy-Org/Qwen3.5/resolve/main/text_encoders/qwen3.5_2b_bf16.safetensors)
+  - [t5gemma_b_b_ul2.safetensors](https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/text_encoders/t5gemma_b_b_ul2.safetensors)
+- checkpoints
+  - [stable_audio_3_medium.safetensors](https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/checkpoints/stable_audio_3_medium.safetensors)
+#### TTS (if you installed Dialogue Voices)
+For this to work you need to have WebUI TTS and to install the PocketTTS addon. 
+If you use anything else just skip this part.
+Use the following settins
+![alt text](GuideImages/firefox_GBtoNrT6mQ.jpg)
+![alt text](GuideImages/firefox_wBpazCvJft.jpg) Speaker detection pattern `<font\b[^>]*\bname=["']([^"']+)["'][^>]*>([^<]+)<\/font>`
+Name to voice map is where you set the voice for each of the character of your story. Else they will default to the narrator voice. 
+Available voices `Alba Mackenna (EN),Anna (EN),Azelma (EN),Bill Boerst (EN),Caro Davy (EN),Charles (EN),Cosette (EN),Eponine (EN),Eve (EN),Fantine (EN),George (EN),Jane (EN),Jean (EN),Javert (EN),Marius (EN),Mary (EN),Michael (EN),Paul (EN),Peter Yearsley (EN),Stuart Bell (EN),Vera (EN)`
+![alt text](GuideImages/firefox_Vw0x7XdV3H.jpg)
+
+To add custom voices to PocketTTS, add the voice sample (10-20sec) in `WebUITTS\voices`
+Then add it without extension (`Alice` if file is `Alice.ogg`) in the available voices setting above. Then click reload.
+#### Ikarus Auto image
+Deactivate `Enable Prompt Injection`
+Scroll to replacement and filters. Here you can implement logics that will modify prompts sent to ComfyUI. I wont go into detail here but you can put a filter that would say : If the prompt contain the name of my character, then prepend the prompt with a custom lora. Remember than multihog use a Narrator card so normal "character prefix" would not work and thats why i recommend this extension.
 ## Creating your character and campaign
 ### Create you character
 #### (Easy) From Sillytavern using the UI
